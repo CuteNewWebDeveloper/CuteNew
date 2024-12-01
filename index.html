@@ -10,13 +10,19 @@
             margin: 0;
             padding: 0;
         }
-        .header {
+ .header {
+            position: fixed; /* 固定定位 */
+            top: 0; /* 距顶部0px */
+            left: 0; /* 距左侧0px（可选，通常用于确保水平居中或对齐） */
+            width: 100%; /* 全宽 */
             display: flex;
             justify-content: space-between;
             align-items: center;
             background-color: #333;
             color: white;
             padding: 10px 20px;
+            z-index: 1000; /* 确保在其他内容之上 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 可选，添加阴影以增强视觉效果 */
         }
         .header .logo {
             font-size: 24px;
