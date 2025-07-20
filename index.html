@@ -114,7 +114,13 @@
 
     .modal-content h3 {
       margin-top: 0;
-      color: black;  /* 修改为黑色 */
+      color: black;
+    }
+
+    .modal-content .small-text {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 10px;
     }
 
     @media (max-width: 500px) {
@@ -160,8 +166,9 @@
   <!-- 弹出窗口 -->
   <div id="modal" class="modal" onclick="toggleModal()">
     <div class="modal-content" onclick="event.stopPropagation()">
-      <img src="qr.jpg" alt="公众号二维码"> <!-- 修改为 qr.jpg -->
-      <h3>微信扫码，欢迎关注</h3> <!-- 修改为黑色文字 -->
+      <img src="qr.jpg" alt="公众号二维码">
+      <h3>微信扫码，欢迎关注</h3>
+      <div class="small-text">Cute New航空摄影</div> <!-- 小字部分 -->
     </div>
   </div>
 
