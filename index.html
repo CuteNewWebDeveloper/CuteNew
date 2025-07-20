@@ -1,112 +1,110 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cute New航空摄影</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
- .header {
-            position: fixed; /* 固定定位 */
-            top: 0; /* 距顶部0px */
-            left: 0; /* 距左侧0px（可选，通常用于确保水平居中或对齐） */
-            width: 100%; /* 全宽 */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
-            z-index: 1000; /* 确保在其他内容之上 */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 可选，添加阴影以增强视觉效果 */
-        }
-        .header .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .header .menu {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-        .header .menu li {
-            margin-left: 20px;
-        }
-        .header .menu li a {
-            color: white;
-            text-decoration: none;
-        }
-        .content {
-            padding: 20px;
-        }
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            display: none;
-        }
-        .image-container img.active {
-            display: block;
-        }
-        .button-container {
-            margin-top: 20px;
-        }
-        .button-container button {
-            margin-right: 10px;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>我们的摄影小组</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: "Helvetica Neue", sans-serif;
+      background: url('background.jpg') no-repeat center center/cover;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 3rem 2rem;
+      border-radius: 16px;
+      text-align: center;
+      max-width: 600px;
+      width: 90%;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+    }
+
+    .info {
+      display: flex;
+      justify-content: space-around;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .info-item {
+      margin: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .info-item span {
+      display: block;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .buttons {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      padding: 0.7rem 1.5rem;
+      background-color: #ffffffaa;
+      color: #000;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #fff;
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .info-item {
+        font-size: 1rem;
+      }
+
+      .info-item span {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="header">
-        <div class="logo">Cute New</div>
-        <ul class="menu">
-            <li><a href="https://jiananlan.github.io/CuteNew/">网站首页</a></li>
-            <li><a href="https://www.jetphotos.com/group/309">Jetphotos页面</a></li>
-            <li><a href="https://www.jetphotos.com/">Jetphotos首页</a></li>
-            <li><a href="https://www.jetphotos.com/addphotos/">Jetphotos上传</a></li>
-            <li><a href="https://github.com/jiananlan/CuteNew/releases/tag/watermark">水印下载</a></li>
-        </ul>
+  <div class="overlay">
+    <h1>我们的摄影小组</h1>
+    <div class="info">
+      <div class="info-item">
+        <span>1200+</span>照片
+      </div>
+      <div class="info-item">
+        <span>12</span>成员
+      </div>
+      <div class="info-item">
+        <span>2022</span>成立
+      </div>
     </div>
- 
-    <div class="content"><br><br><br>
-        <h1>Cute New航空摄影小组网站</h1>
-        <p>The website of Cute New spotting group</p>
- <p>小组水印（点击查看深色/浅色版本）</p>
-        <div class="image-container">
-            <img src="浅色水印-透明.png" class="active" alt="Image 1">
-            <img src="深色水印-透明.png" alt="Image 2">
-        </div>
- 
-        <div class="button-container">
-            <button onclick="showImage(0)">浅色</button>
-            <button onclick="showImage(1)">深色</button>
-        </div>
+    <div class="buttons">
+      <a href="https://yourusername.github.io/project1" class="button" target="_blank">作品展示</a>
+      <a href="https://yourusername.github.io/project2" class="button" target="_blank">成员主页</a>
     </div>
- 
-    <script>
-        function showImage(index) {
-            const images = document.querySelectorAll('.image-container img');
-            images.forEach((img, i) => {
-                img.classList.toggle('active', i === index);
-            });
-        }
-    </script>
-<hr/>
-&nbsp;&nbsp;<h2>我们的社交媒体</h2>
-   &nbsp;&nbsp; <p style="color: green;">微信公众号:</p>
-&nbsp;&nbsp;&nbsp;Cute New航空摄影
-   &nbsp;&nbsp;  <p style="color: yellow;">微博:</p>
-
-&nbsp;&nbsp;&nbsp;CuteNew航空 &nbsp;&nbsp;<p style="color: red;">小红书:</p>
-
-&nbsp;&nbsp;&nbsp;CuteNew航空摄影&nbsp;&nbsp;<p style="color: blue;">Bilibili:</p>
-
-&nbsp;&nbsp;&nbsp;CuteNew航空摄影   <br><br><br>
+  </div>
 </body>
 </html>
