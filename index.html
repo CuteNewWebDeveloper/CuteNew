@@ -29,13 +29,13 @@
 
     h1 {
       font-size: 2.5rem;
-      margin-top: 0.5rem;  /* 增加顶部间距 */
+      margin-top: 0.5rem;
       margin-bottom: 1rem;
       letter-spacing: 2px;
     }
 
     .logo {
-      max-width: 180px; /* 增加 Logo 大小 */
+      max-width: 220px; /* 增加 Logo 大小 */
       margin-bottom: 0.5rem; /* 缩小与标题的间距 */
     }
 
@@ -55,6 +55,27 @@
       display: block;
       font-size: 2rem;
       font-weight: bold;
+    }
+
+    .hint {
+      display: inline-block;
+      font-size: 1rem;
+      color: #ffcc00;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .hint:hover::after {
+      content: "公众号名称：Cute New航空摄影";
+      position: absolute;
+      left: 0;
+      top: 30px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 0.5rem;
+      border-radius: 5px;
+      font-size: 1rem;
+      white-space: nowrap;
     }
 
     .buttons {
@@ -96,7 +117,7 @@
 </head>
 <body>
   <div class="overlay">
-    <!-- 增加了更大的 Logo，且减少了与标题的间距 -->
+    <!-- 增大了 Logo -->
     <img src="logo.png" alt="Cute New Logo" class="logo">
 
     <h1>Cute New 摄影小组</h1>
@@ -111,7 +132,7 @@
         <span>2022</span>成立
       </div>
       <div class="info-item">
-        <span>每月更新</span>公众号
+        <span class="hint">每月更新</span>公众号
       </div>
     </div>
     <div class="buttons">
